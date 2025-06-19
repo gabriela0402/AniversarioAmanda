@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mandy's Birthday</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <div class="waves"></div>
+
+  <div id="pag1">
+    <h1>Seja Bem-vinda</h1>
+    <p>Digite seu nome:</p>
+    <input type="text" placeholder="Seu nome" id="nome" />
+    <p>Digite a senha:</p>
+    <input type="password" placeholder="Sua senha" id="senha"/>
+    <br /><br />
+    <button onclick="verificar()">Entrar</button>
+  </div>
+
+  <script>
+    function verificar(){
+        nome= document.getElementById("nome").value;
+        senha= document.getElementById("senha").value;
+
+        if(nome == "Mandy" && senha == "0207"){
+            window.location.href = "mandy.html";
+        }else{
+            alert("Você não é a Mandy.");
+        }
+    }
+  </script>
+</body>
+</html>
+

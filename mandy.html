@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Envelope e Vídeo Lado a Lado</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #e58cde;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      display: flex;
+      gap: 40px; /* Espaço entre envelope e vídeo */
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .video {
+      width: 300px;
+      height: auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      border: 6px solid rgb(236, 211, 215);
+    }
+    .conteudo{
+      align-items: center;
+      background-color: rgba(255, 192, 203, 0.61);
+      padding: 20px;
+      border-radius: 30px;
+      height: 200px;
+      text-align: center;
+    }
+    .waves {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 200px;
+    background: url('data:image/svg+xml;utf8,\
+      <svg viewBox="0 0 1200 200" xmlns="http://www.w3.org/2000/svg">\
+        <path fill="%23ffffff" d="M0,0 C300,100 900,100 1200,0 L1200,200 L0,200 Z" />\
+      </svg>') repeat-x;
+    background-size: contain;
+    animation: wave 10s linear infinite;
+    z-index: -1;
+    opacity: 0.4;
+  }
+  
+  @keyframes wave {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  </style>
+</head>
+<body>
+  <div class="waves"></div>
+  <div class="container">
+    <div class="envelope" onclick="abrirEnvelope(this)">
+      <div class="tampa"></div>
+      <div class="conteudo">
+        <p>Oiii Bestie!</p>
+        <p>Feliz Aniversário!</p>
+        <p>Fizemos esta mini retrospectiva de alguns dos nossos momentos <br> juntas!</p>
+        <p>Espero que a gente continue construindo memórias incríveis <br>como essas para sempre.</p>
+        <p>Com carinho</p>
+        <p>Das suas besties.</p>
+        <p>💌</p>
+      </div>
+    </div>
+
+    <div class="video">
+      <video width="100%" controls>
+        <source src="video/mandyvideo.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo.
+      </video>
+    </div>
+  </div>
+
+  <!-- <script>
+    function abrirEnvelope(elemento) {
+      elemento.classList.toggle("abrir");
+    }
+  </script> -->
+
+</body>
+</html>
